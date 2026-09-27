@@ -8,15 +8,34 @@
 
     <div class="row my-3">
         <div id="novedades" class="col-md-5 offset-md-2 scroll_section">
-            <h2>Nuestros productos destacados</h2>
+            <h2>Novedades del club</h2>
             <ul class="productos-destacados">
-                <li><a data-bs-toggle="modal" data-bs-target="#modalAlocasia" href="#modalAlocasia"><img src="img/alocasia.jpg" alt="Alocasia">Alocasia</a></li>
-                <li><a data-bs-toggle="modal" data-bs-target="#modalMonstera" href="#modalMonstera"><img src="img/monstera.jpg" alt="Monstera">Monstera</a></li>
-                <li><a data-bs-toggle="modal" data-bs-target="#modalCalathea" href="#modalCalathea"><img src="img/planta2.jpg" alt="Calathea">Calathea</a></li>
-                <li><a data-bs-toggle="modal" data-bs-target="#modalDieffenbachia" href="#modalDieffenbachia"><img src="img/planta.jpg" alt="Dieffenbachia">Dieffenbachia</a></li>
-                <li><a data-bs-toggle="modal" data-bs-target="#modalAglaonema" href="#modalAglaonema"><img src="img/aglaonema.jpg" alt="Aglaonema">Aglaonema</a></li>
+                {{#each novedades}}
+                <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">{{titulo}}</a>
+                </li>
+                {{/each}}
             </ul>
+        </div> <!-- cierra novedades -->
+        <!-- Modal -->
+        {{#each novedades}}
+        <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3" id="exampleModalLabel">{{titulo}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 class="fs-5 text-muted">{{subtitulo}}</h2>
+                        <p>{{cuerpo}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        {{/each}}
+        {{!-- fin del modal --}}
+
         <div class="col-md-5">
             <div class="testimonios">
                 <h2 class="text-center mb-4">Reseñas de nuestros clientes</h2>
@@ -159,96 +178,6 @@
                     </div>
                 {{/if}}
             </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalAlocasia" tabindex="-1" aria-labelledby="labelAlocasia" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="labelAlocasia">Alocasia</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="img/alocasia.jpg" class="img-fluid mb-3 rounded" alt="Alocasia">
-                <p class="text-start">La Alocasia llama un montón la atención por el tamaño y la forma de sus hojas. Le gusta mucho la humedad, así que está bueno rociarla con agua cada tanto. Eso sí, mejor tenerla adentro o donde no le dé el rayo del sol directo para que no se queme.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalMonstera" tabindex="-1" aria-labelledby="labelMonstera" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="labelMonstera">Monstera Deliciosa</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="img/monstera.jpg" class="img-fluid mb-3 rounded" alt="Monstera">
-                <p class="text-start">Esta es una de nuestras plantas favoritas para interiores. Es re fácil de cuidar porque no hace falta regarla todos los días, solo cuando tocás la tierra y está seca. Queda genial para decorar el living o cualquier rincón de la casa que tenga buena luz.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalCalathea" tabindex="-1" aria-labelledby="labelCalathea" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="labelCalathea">Calathea</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="img/planta2.jpg" class="img-fluid mb-3 rounded" alt="Calathea">
-                <p class="text-start">Esta planta tiene un diseño increíble en las hojas, parece casi pintada a mano. Es un poco más delicada que las otras, no le gusta el frío ni los cambios bruscos de temperatura. Ideal para un lugar tranquilo con luz indirecta.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalDieffenbachia" tabindex="-1" aria-labelledby="labelDieffenbachia" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="labelDieffenbachia">Dieffenbachia</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="img/planta.jpg" class="img-fluid mb-3 rounded" alt="Dieffenbachia">
-                <p class="text-start">Es súper resistente y si le das espacio crece un montón. Tiene unas hojas enormes re vistosas. Un dato importante a tener en cuenta es que la savia puede ser tóxica, así que conviene dejarla en un lugar alto si tenés gatos o perros curiosos.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalAglaonema" tabindex="-1" aria-labelledby="labelAglaonema" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="labelAglaonema">Aglaonema</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="img/aglaonema.jpg" class="img-fluid mb-3 rounded" alt="Aglaonema">
-                <p class="text-start">Si recién estás arrancando a tener plantas, esta es perfecta porque sobrevive a casi todo. Se banca bastante bien los lugares con poca luz y te perdona si te colgás unos días con el riego. Aparte los colores que tiene levantan cualquier ambiente.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
         </div>
     </div>
 </div>

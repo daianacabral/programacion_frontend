@@ -30,7 +30,6 @@ secured = async (req, res, next) => {
   }
 }
 
-
 var obj = {
     nombre: 'Margarita',
     precio: 3500,
