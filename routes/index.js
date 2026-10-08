@@ -38,8 +38,11 @@ router.post('/', async (req, res, next) => {
 
     var info = await transporter.sendMail(obj);
 
+    var novedades = await novedadesModel.getNovedades();
+
     res.render('index', {
         message: 'Mensaje enviado correctamente',
+        novedades
     });
 });
 
